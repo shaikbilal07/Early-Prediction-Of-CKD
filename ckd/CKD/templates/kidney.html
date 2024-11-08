@@ -1,0 +1,249 @@
+{% extends 'main.html' %}
+{% block content %}
+<style>
+    body {
+        background-image: url('https://img.freepik.com/free-photo/top-view-background-beautiful-white-grey-brown-cream-blue-background_140725-72219.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+
+    /* Scroll animation for the heading */
+    .scrolling-text {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .scrolling-text h1 {
+        display: inline-block;
+        padding-left: 100%;
+        animation: scrolling s linear infinite;
+        font-size: 2.5rem;
+        color: rgb(127, 12, 235);
+    }
+
+    @keyframes scrolling {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    .form-control:focus::placeholder {
+        color: transparent;
+    }
+
+    /* White container for the sample dataset */
+    .sample-inputs-container {
+        background-color: white;
+        border: 1px solid black;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .table {
+        margin-top: 20px;
+    }
+</style>
+
+<div class="row" style="margin-bottom: 125px;">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <!-- Scrolling text heading -->
+        <div class="scrolling-text">
+            <h1>Kidney Disease Predictor</h1>
+        </div>
+        <div class="card card-body" style="border: 1px solid black;">
+            <form class="form-horizontal" action="{{ url_for('predictPage') }}" method="POST">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="age" placeholder="Age">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="bp" placeholder="Blood Pressure">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="al" placeholder="Albumin">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="su" placeholder="Sugar">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="rbc" placeholder="Red Blood Cells">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="pc" placeholder="Pus Cells">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="pcc" placeholder="Pus Cell Clumps">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="ba" placeholder="Bacteria">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="bgr" placeholder="Blood Glucose Random">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="bu" placeholder="Blood Urea">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="sc" placeholder="Serum Creatinine">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="pot" placeholder="Potassium">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="wc" placeholder="White Blood Cell">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="htn" placeholder="Hypertension">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="dm" placeholder="Diabetes Mellitus">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="cad" placeholder="Coronary Artery Disease">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="pe" placeholder="Pedal Edema">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="ane" placeholder="Anemia">
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-info btn-block" value="Predict">
+            </form>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div> 
+
+<br>
+
+<h1 style="text-align: center">Sample Inputs in the Dataset</h1> 
+<br>
+
+<div class="sample-inputs-container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Age</th>
+                <th scope="col">BP</th>
+                <th scope="col">AL</th>
+                <th scope="col">SU</th>
+                <th scope="col">RBC</th>
+                <th scope="col">PC</th>
+                <th scope="col">PCC</th>
+                <th scope="col">BA</th>
+                <th scope="col">BGR</th>
+                <th scope="col">BU</th>
+                <th scope="col">SC</th>
+                <th scope="col">POT</th>
+                <th scope="col">WC</th>
+                <th scope="col">HTN</th>
+                <th scope="col">DM</th>
+                <th scope="col">CAD</th>
+                <th scope="col">PE</th>
+                <th scope="col">ANE</th>
+                <th scope="col">Disease</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>24</td>
+                <td>100</td>
+                <td>2</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+                <td>136</td>
+                <td>60</td>
+                <td>1.9</td>
+                <td>3.7</td>
+                <td>9600</td>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1</td>
+                <td>Present</td>
+            </tr>
+            <tr>
+                <td>68</td>
+                <td>80</td>
+                <td>3</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+                <td>157</td>
+                <td>162</td>
+                <td>9.6</td>
+                <td>4.9</td>
+                <td>11000</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1</td>
+                <td>Present</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

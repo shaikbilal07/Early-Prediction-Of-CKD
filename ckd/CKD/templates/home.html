@@ -1,0 +1,131 @@
+{% extends 'main.html' %}
+{% block content %}
+{% if message %}
+        <div class="alert alert-danger">{{ message }}</div>
+    {% endif %}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Kidney Disease Prediction</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+      body {
+        background-image: url('https://img.freepik.com/free-photo/top-view-background-beautiful-white-grey-brown-cream-blue-background_140725-72219.jpg'); /* Add your background image here */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+      }
+      .jumbotron-heading {
+        color: pink !important; /* Change this to your desired color */
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <main role="main">
+
+      <section class="jumbotron p-3 p-md-5 text-white rounded bg-dark text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Chronic Kidney Disease Prediction</h1>
+          <p class="lead">Chronic kidney disease (CKD) is one of the most
+critical health problems due to its increasing prevalence. In this
+paper, we aim to test the ability of machine learning algorithms
+for the prediction of chronic kidney disease using the smallest
+subset of features</p>
+          <p>
+            <a href="https://www.mayoclinic.org/diseases-conditions/chronic-kidney-disease/symptoms-causes/syc-20354521" class="btn btn-primary my-2">Read More about the Disease</a>
+          </p>
+        </div>
+      </section>
+
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250" style="background-color: gainsboro;">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-primary">Machine Learning Models</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="#">Random Forest</a>
+              </h3>
+              <div class="mb-1 text-muted">For Classification</div>
+              <p class="card-text mb-auto">Random forest is a supervised learning algorithm. The general idea of the bagging method is that a combination of learning models increases the overall result. Put simply: random forest builds multiple decision trees and merges them together to get a more accurate and stable prediction.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250" style="background-color: gainsboro;">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-success">Machine Learning Models</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="#">SVM</a>
+              </h3>
+              <div class="mb-1 text-muted">Classification Algorithm</div>
+              <p class="card-text mb-auto">SVM is an algorithm that has recently been dominating applied machine learning and Kaggle competitions for structured or tabular data. Support vector machines (SVMs) are a set of supervised learning methods used for classification, regression and outliers detection.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!-- Marketing messaging and featurettes -->
+      <div class="container marketing">
+        <div class="row">
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="https://cdn.icon-icons.com/icons2/2593/PNG/512/data_icon_154512.png" alt="Generic placeholder image" width="140" height="140">
+            <h2>Data-Set</h2>
+            <p>We have used the data set available in Kaggle - Chronic-Kidney Disease Prediction. After Classifying the data, Preprocessing and performing the Exploratory Data Analysis. This data set contains about 1338 records of data in various categories.</p>
+            <p><a class="btn btn-secondary" href="https://www.kaggle.com/datasets/joebeachcapital/risk-factor-prediction-of-chronic-kidney-disease" role="button">View details &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="https://www.edureka.co/blog/wp-content/uploads/2019/01/Classification-Random-Forest-Random-Forest-In-R-Edureka-2-381x300.png" alt="Generic placeholder image" width="140" height="140">
+            <h2>Algorithms</h2>
+            <p>Machine learning (ML) is a field of study in artificial intelligence concerned with the development. Random Forest, SVM, Decision Tree and Naive Bayes are popular machine learning algorithms that belong to the supervised learning technique.</p>
+            <p><a class="btn btn-secondary" href="https://www.geeksforgeeks.org/machine-learning-algorithms/" role="button">View details &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="https://cdn4.iconfinder.com/data/icons/design-development-flat-future-is-now/512/User_Interface-1024.png" alt="Generic placeholder image" width="140" height="140">
+            <h2>User Interface</h2>
+            <p>Flask is a popular and flexible web application framework that works with any Python web toolkit. Flask depends on the Werkzeug WSGI toolkit, and the Jinja template engine. Flask provides configuration and conventions, with sensible defaults, to get started.</p>
+            <p><a class="btn btn-secondary" href="https://flask.palletsprojects.com/en/3.0.x/" role="button">View details &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+      
+      <section class="jumbotron p-3 p-md-5 text-white rounded bg-dark text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Chronic Kidney Disease Prediction</h1>
+          <p class="lead">Chronic kidney disease (CKD) is one of the most
+critical health problems due to its increasing prevalence. In this
+paper, we aim to test the ability of machine learning algorithms
+for the prediction of chronic kidney disease using the smallest
+subset of features</p>
+          <p>
+            <a href="{{ url_for('kidneyPage') }}" class="btn btn-primary my-2">Check out the Project</a>
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+  </body>
+</html>
+
+{% endblock %}

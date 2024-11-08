@@ -1,0 +1,62 @@
+{% extends 'main.html' %}
+{% block content %}
+<style>
+    body {
+        background-image: url('https://img.freepik.com/free-photo/top-view-background-beautiful-white-grey-brown-cream-blue-background_140725-72219.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+</style>
+    <div class="row" style="margin-bottom: 477px;">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            {% if pred == 1 %}
+                <div class="jumbotron">
+                    <h1 class="display-4" style="color: brown;">You have a Kidney Disease!</h1>
+                    <p class="lead">Please consult a doctor immediately. It could be risky without medical attention. Focus on your health, especially your diet.</p>
+                    <hr class="my-4">
+                    <h3 style="color: rebeccapurple;">Diet Recommendations:</h3>
+                    <ul>
+                        <li>Limit sodium intake (less than 2,300 mg/day).</li>
+                        <li>Avoid high-potassium foods (bananas, oranges, potatoes).</li>
+                        <li>Limit phosphorus intake (avoid dairy, nuts, processed foods).</li>
+                        <li>Reduce protein-rich foods (meat, eggs) if advised.</li>
+                        <li>Monitor fluid intake as per your doctor's advice.</li>
+                        <li>Opt for whole grains, low-sugar foods, and healthy fats (olive oil, salmon).</li>
+                    </ul>
+                    <h3 style="color: rebeccapurple;">Precautions:</h3>
+                    <ul>
+                        <li>Regular medical check-ups and blood pressure monitoring.</li>
+                        <li>Avoid NSAIDs and other medications harmful to kidneys.</li>
+                        <li>Maintain a healthy weight and exercise regularly.</li>
+                        <li>Avoid smoking and limit alcohol consumption.</li>
+                        <li>Manage diabetes and hypertension effectively.</li>
+                    </ul>
+                    <p class="lead">
+                        <a class="btn btn-primary btn-lg" href="https://www.who.int/" role="button">Learn more</a>
+                    </p>
+                </div>
+            {% else %}
+                <div class="jumbotron">
+                    <h1 class="display-4" style="color: green;">Great! You are Healthy</h1>
+                    <p class="lead">You are absolutely alright! There are no signs of kidney disease. Enjoy your life with happiness, but continue to take care of your health.</p>
+                    <hr class="my-4">
+                    <p>Remember, nothing is more important than your health.</p>
+                    <p class="lead">
+                        <a class="btn btn-primary btn-lg" href="https://www.who.int/" role="button">Learn more</a>
+                    </p>
+                </div>
+            {% endif %}
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <a href="{{ url_for('home') }}" class="btn btn-block btn-primary">Back to Home</a>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+{% endblock %}
